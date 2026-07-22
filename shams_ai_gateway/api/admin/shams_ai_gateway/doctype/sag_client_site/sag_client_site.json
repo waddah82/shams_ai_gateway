@@ -1,0 +1,87 @@
+{
+ "actions": [],
+ "creation": "2026-07-18 00:00:00",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "site_name",
+  "gateway_user",
+  "site_url",
+  "use_http",
+  "api_key",
+  "api_secret",
+  "is_active"
+ ],
+ "fields": [
+  {
+   "fieldname": "site_name",
+   "fieldtype": "Data",
+   "label": "اسم السايت (مثال: client1)",
+   "unique": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "gateway_user",
+   "fieldtype": "Link",
+   "label": "Gateway User",
+   "options": "User",
+   "reqd": 1,
+   "unique": 1,
+   "description": "OAuth/API user on the central SAG Gateway assigned to this remote ERPNext site"
+  },
+  {
+   "fieldname": "site_url",
+   "fieldtype": "Data",
+   "label": "رابط السايت/الدومين (بدون http)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "use_http",
+   "fieldtype": "Check",
+   "label": "استخدام HTTP بدلاً من HTTPS (للتطوير المحلي)"
+  },
+  {
+   "fieldname": "api_key",
+   "fieldtype": "Data",
+   "label": "API Key الخاص بسايت العميل",
+   "reqd": 1
+  },
+  {
+   "fieldname": "api_secret",
+   "fieldtype": "Password",
+   "label": "API Secret الخاص بسايت العميل",
+   "reqd": 1
+  },
+  {
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "نشط",
+   "default": "1"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-07-18 00:00:00",
+ "modified_by": "Administrator",
+ "module": "Shams AI Gateway",
+ "name": "SAG Client Site",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

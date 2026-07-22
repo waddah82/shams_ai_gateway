@@ -1,0 +1,176 @@
+{
+  "actions": [],
+  "autoname": "prompt:SAG Local Chat Settings",
+  "creation": "2026-07-03 18:00:00.000000",
+  "doctype": "DocType",
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "field_order": [
+    "main_section",
+    "enable_local_chat",
+    "chat_module",
+    "selected_model",
+    "temperature",
+    "max_tokens",
+    "chat_behavior_section",
+    "chat_title",
+    "default_language",
+    "system_instruction",
+    "max_tool_calls",
+    "max_tool_result_chars",
+    "history_section",
+    "keep_chat_history",
+    "max_history_messages",
+    "advanced_section",
+    "enable_debug_log"
+  ],
+  "fields": [
+    {
+      "fieldname": "main_section",
+      "fieldtype": "Section Break",
+      "label": "LLM Configuration"
+    },
+    {
+      "default": "1",
+      "fieldname": "enable_local_chat",
+      "fieldtype": "Check",
+      "label": "Enable Local Chat"
+    },
+    {
+      "description": "LLM provider configuration. Create records such as OpenAI, Mistral, Gemini, Ollama, etc. Tools/OCR availability is controlled from SAG Admin.",
+      "fieldname": "chat_module",
+      "fieldtype": "Link",
+      "in_list_view": 1,
+      "label": "Chat Module",
+      "options": "Chat Module",
+      "reqd": 1
+    },
+    {
+      "description": "Optional override. If empty, the selected Chat Module default model will be used.",
+      "fieldname": "selected_model",
+      "fieldtype": "Data",
+      "label": "Selected Model"
+    },
+    {
+      "default": "0.1",
+      "fieldname": "temperature",
+      "fieldtype": "Float",
+      "label": "Temperature",
+      "precision": "2"
+    },
+    {
+      "default": "4000",
+      "fieldname": "max_tokens",
+      "fieldtype": "Int",
+      "label": "Max Tokens"
+    },
+    {
+      "collapsible": 0,
+      "fieldname": "chat_behavior_section",
+      "fieldtype": "Section Break",
+      "label": "Chat Behavior"
+    },
+    {
+      "default": "SAG Local Chat",
+      "fieldname": "chat_title",
+      "fieldtype": "Data",
+      "label": "Chat Page Title"
+    },
+    {
+      "default": "Arabic",
+      "fieldname": "default_language",
+      "fieldtype": "Select",
+      "label": "Default Response Language",
+      "options": "Arabic\nEnglish\nSame as user"
+    },
+    {
+      "default": "أنت مساعد محلي داخل ERPNext. استخدم أدوات Shams AI Gateway المتاحة عند الحاجة فقط، والتزم بصلاحيات المستخدم الحالية. لا تنفذ أي تعديل أو حذف إلا إذا طلب المستخدم ذلك بوضوح وكانت الأداة مفعلة ومسموح بها من إعدادات SAG Admin.",
+      "description": "General instruction for the local chat. Do not put invoice-only JSON instructions here unless this chat is only for invoice extraction.",
+      "fieldname": "system_instruction",
+      "fieldtype": "Text Editor",
+      "label": "System Instruction"
+    },
+    {
+      "default": "6",
+      "description": "Hard limit for one user message. This is not a tool enable/disable setting; SAG Admin still controls available tools.",
+      "fieldname": "max_tool_calls",
+      "fieldtype": "Int",
+      "label": "Max Tool Calls Per Message"
+    },
+    {
+      "default": "60000",
+      "description": "Maximum characters returned from all tool results to the LLM in one turn.",
+      "fieldname": "max_tool_result_chars",
+      "fieldtype": "Int",
+      "label": "Max Tool Result Characters"
+    },
+    {
+      "collapsible": 1,
+      "fieldname": "history_section",
+      "fieldtype": "Section Break",
+      "label": "History"
+    },
+    {
+      "default": "1",
+      "fieldname": "keep_chat_history",
+      "fieldtype": "Check",
+      "label": "Keep Chat History In Browser"
+    },
+    {
+      "default": "20",
+      "fieldname": "max_history_messages",
+      "fieldtype": "Int",
+      "label": "Max History Messages"
+    },
+    {
+      "collapsible": 1,
+      "fieldname": "advanced_section",
+      "fieldtype": "Section Break",
+      "label": "Advanced"
+    },
+    {
+      "default": "0",
+      "fieldname": "enable_debug_log",
+      "fieldtype": "Check",
+      "label": "Enable Debug Log"
+    }
+  ],
+  "issingle": 1,
+  "links": [],
+  "modified": "2026-07-03 18:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "Shams AI Gateway",
+  "name": "SAG Local Chat Settings",
+  "naming_rule": "Expression (old style)",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "System Manager",
+      "share": 1,
+      "write": 1
+    },
+    {
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "Assistant Admin",
+      "share": 1,
+      "write": 1
+    }
+  ],
+  "quick_entry": 0,
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "states": [],
+  "track_changes": 1
+}
