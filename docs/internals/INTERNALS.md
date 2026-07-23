@@ -911,22 +911,22 @@ graph TB
     end
 
     subgraph "Storage"
-        FACSkill[(SAG Skill DocType<br/>markdown in content field)]
+        SAGSkill[(SAG Skill DocType<br/>markdown in content field)]
         SkillCache[(Redis cache<br/>key: skills)]
     end
 
     Client -->|tools/list| ToolsList
     Client -->|resources/list| ResList
-    Client -->|resources/read uri=sag://skills/...| ResRead
+    Client -->|resources/read uri=fac://skills/...| ResRead
 
     ToolsList -->|skill_mode=replace| ToolMap
     ResList --> SM
     ResRead --> SM
 
     SM --> PermQuery
-    SM --> FACSkill
-    ToolMap --> FACSkill
-    FACSkill -.cache invalidation on write.-> SkillCache
+    SM --> SAGSkill
+    ToolMap --> SAGSkill
+    SAGSkill -.cache invalidation on write.-> SkillCache
 ```
 
 ### Installation paths
@@ -938,10 +938,10 @@ Both paths converge on the same storage, permissions model, and MCP surface.
 
 ### Skill-mode interaction with the tool list
 
-`Shams AI Gateway Settings.skill_mode` controls how skills interact with `tools/list`:
+`SAG Settings.skill_mode` controls how skills interact with `tools/list`:
 
 - **`supplementary`** (default) — tool descriptions are unchanged; skills appear only as separate MCP resources.
-- **`replace`** — for every tool that has a linked Published Tool Usage skill, the tool description in `tools/list` is replaced with a short pointer: `<tool_name>: <skill description>. Detailed guidance: sag://skills/<skill-id>`. The full guidance is fetched on demand via `resources/read`. This is a token-optimization path for deployments with many tools.
+- **`replace`** — for every tool that has a linked Published Tool Usage skill, the tool description in `tools/list` is replaced with a short pointer: `<tool_name>: <skill description>. Detailed guidance: fac://skills/<skill-id>`. The full guidance is fetched on demand via `resources/read`. This is a token-optimization path for deployments with many tools.
 
 ### Caching and invalidation
 

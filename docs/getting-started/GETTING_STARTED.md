@@ -31,7 +31,7 @@ The fastest way to get started:
 cd /path/to/your/frappe-bench
 
 # Download the app
-bench get-app https://github.com/buildswithpaul/Shams_AI_Gateway
+bench get-app https://github.com/buildswithpaul/Frappe_Assistant_Core
 
 # Install on your site (replace 'yoursite' with your actual site name)
 bench --site yoursite install-app shams_ai_gateway
@@ -98,10 +98,10 @@ Choose the AI tool that works best for your workflow:
 
 Connect Claude Desktop using modern OAuth 2.0 authentication:
 
-#### 1. Enable OAuth in Shams AI Gateway Settings
+#### 1. Enable OAuth in SAG Settings
 
 - **Login to ERPNext** as Administrator
-- **Go to**: Setup → Integrations → Shams AI Gateway Settings
+- **Go to**: Setup → Integrations → SAG Settings
 - **OAuth Tab:**
   - ✅ Check "Show Authorization Server Metadata"
   - ✅ Check "Enable Dynamic Client Registration"
@@ -182,7 +182,7 @@ Test your setup with the MCP Inspector tool:
 
 #### 1. Enable Browser-Based Clients
 
-- **Go to**: Shams AI Gateway Settings → OAuth Tab
+- **Go to**: SAG Settings → OAuth Tab
 - **Add to "Allowed Public Client Origins"**: `http://localhost:6274`
 - **Save**
 
@@ -203,7 +203,7 @@ ChatGPT also supports custom MCP connectors with OAuth authentication:
 
 #### 1. Enable OAuth (Same as Claude Desktop)
 
-Make sure OAuth is enabled in Shams AI Gateway Settings (see Step 1 above).
+Make sure OAuth is enabled in SAG Settings (see Step 1 above).
 
 #### 2. Add Custom Action in ChatGPT
 
@@ -324,10 +324,10 @@ curl -fsSL https://ollama.com/install.sh | sh
 ollama pull deepseek-ocr
 ```
 
-#### 2. Configure in Shams AI Gateway Settings
+#### 2. Configure in SAG Settings
 
 1. **Login to ERPNext** as Administrator
-2. **Go to**: Setup → Integrations → Shams AI Gateway Settings
+2. **Go to**: Setup → Integrations → SAG Settings
 3. **OCR Tab:**
    - **OCR Backend**: Select `ollama`
    - **Ollama API URL**: `http://localhost:11434` (default)
@@ -346,7 +346,7 @@ Try extracting text from a scanned document:
 
 ### OCR Language Support
 
-Set the default OCR language in Shams AI Gateway Settings. Common language codes:
+Set the default OCR language in SAG Settings. Common language codes:
 - `en` - English (default)
 - `fr` - French
 - `de` - German
@@ -463,8 +463,8 @@ See [Development Guide](../development/DEVELOPMENT_GUIDE.md) for details.
 If you're still having issues:
 
 1. **Check Documentation**: Review [Technical Documentation](../architecture/TECHNICAL_DOCUMENTATION.md)
-2. **Community Support**: Post in [GitHub Discussions](https://github.com/buildswithpaul/Shams_AI_Gateway/discussions)
-3. **Report Bugs**: Use [GitHub Issues](https://github.com/buildswithpaul/Shams_AI_Gateway/issues)
+2. **Community Support**: Post in [GitHub Discussions](https://github.com/buildswithpaul/Frappe_Assistant_Core/discussions)
+3. **Report Bugs**: Use [GitHub Issues](https://github.com/buildswithpaul/Frappe_Assistant_Core/issues)
 4. **Enterprise Support**: Contact jypaulclinton@gmail.com for priority support
 
 ## 🎓 Next Steps

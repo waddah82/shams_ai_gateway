@@ -46,7 +46,7 @@ Prompt Templates allow you to:
 
 ### Accessing Prompt Templates
 
-1. Navigate to **Shams AI Gateway > Prompt Template** in your Frappe desk
+1. Navigate to **SAG > Prompt Template** in your Frappe desk
 2. Click **+ Add Prompt Template** to create a new template
 3. Fill in the required fields and save
 
@@ -256,7 +256,7 @@ SAG includes these pre-installed categories:
 
 ### Creating Custom Categories
 
-1. Navigate to **Shams AI Gateway > Prompt Category**
+1. Navigate to **SAG > Prompt Category**
 2. Create a new category with:
    - **Category ID**: Unique identifier (e.g., `custom-reports`)
    - **Category Name**: Display name (e.g., "Custom Reports")
@@ -269,7 +269,7 @@ SAG includes these pre-installed categories:
 
 ```python
 # Python API
-from shams_ai_gateway.shams_ai_gateway.doctype.prompt_template.prompt_template import (
+from shams_ai_gateway.sag.doctype.prompt_template.prompt_template import (
     get_prompts_by_category
 )
 
@@ -485,7 +485,7 @@ Each `prompts/get` call:
 
 ```python
 import frappe
-from shams_ai_gateway.shams_ai_gateway.doctype.prompt_template.prompt_template import (
+from shams_ai_gateway.sag.doctype.prompt_template.prompt_template import (
     preview_template,
     get_version_history,
     restore_version,
@@ -520,7 +520,7 @@ category_prompts = get_prompts_by_category("data-analysis")
 
 ```bash
 # Preview template
-curl -X POST "https://your-site.com/api/method/shams_ai_gateway.shams_ai_gateway.doctype.prompt_template.prompt_template.preview_template" \
+curl -X POST "https://your-site.com/api/method/shams_ai_gateway.sag.doctype.prompt_template.prompt_template.preview_template" \
   -H "Content-Type: application/json" \
   -d '{
     "template_content": "Analyze {{ doctype }}",
@@ -529,7 +529,7 @@ curl -X POST "https://your-site.com/api/method/shams_ai_gateway.shams_ai_gateway
   }'
 
 # Search prompts
-curl -X POST "https://your-site.com/api/method/shams_ai_gateway.shams_ai_gateway.doctype.prompt_template.prompt_template.search_prompts" \
+curl -X POST "https://your-site.com/api/method/shams_ai_gateway.sag.doctype.prompt_template.prompt_template.search_prompts" \
   -H "Content-Type: application/json" \
   -d '{"query": "analysis", "status": "Published"}'
 ```
@@ -648,4 +648,4 @@ This will:
 
 For issues or feature requests:
 - GitHub: [shams_ai_gateway issues](https://github.com/your-repo/shams_ai_gateway/issues)
-- Frappe Forum: Tag with `frappe-assistant-core`
+- Frappe Forum: Tag with `shams-ai-gateway`

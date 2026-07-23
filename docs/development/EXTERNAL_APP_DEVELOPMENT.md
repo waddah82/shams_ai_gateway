@@ -767,7 +767,7 @@ bench console
 
 ### Post-Deployment
 
-- [ ] Verify tools appear in Shams AI Gateway Settings
+- [ ] Verify tools appear in SAG Settings
 - [ ] Test tool execution through API
 - [ ] Check logs for any errors
 - [ ] Verify permissions work correctly

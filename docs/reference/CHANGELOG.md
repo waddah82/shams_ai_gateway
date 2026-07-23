@@ -126,7 +126,7 @@ This release migrates Shams AI Gateway from STDIO bridge to StreamableHTTP trans
    ```
 
 2. **Configure OAuth**
-   - Go to Shams AI Gateway Settings
+   - Go to SAG Settings
    - Enable Dynamic Client Registration
    - Configure Allowed Public Client Origins (if needed)
 

@@ -94,7 +94,7 @@ Content-Type: application/json
       "tools": {}
     },
     "serverInfo": {
-      "name": "frappe-assistant-core",
+      "name": "shams-ai-gateway",
       "version": "2.0.0"
     }
   },
@@ -783,7 +783,7 @@ Standard Frappe session cookies for web requests.
 ## Rate Limiting
 
 - Default: 60 requests per minute per user
-- Configurable in Shams AI Gateway Settings
+- Configurable in SAG Settings
 - Exceeded requests return HTTP 429
 
 ## Response Formats

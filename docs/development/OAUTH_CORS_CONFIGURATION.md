@@ -50,11 +50,11 @@ Or for specific origins:
 
 ---
 
-### Method 2: Shams AI Gateway Settings (EXPERIMENTAL)
+### Method 2: SAG Settings (EXPERIMENTAL)
 
 **⚠️ This method is experimental and may change in future versions.**
 
-1. Go to **Shams AI Gateway Settings**
+1. Go to **SAG Settings**
 2. Enable **Dynamic Client Registration**
 3. Scroll to **Allowed Public Client Origins**
 4. Enter origins (one per line):
@@ -79,7 +79,7 @@ Or for specific origins:
 ### Scenario 1: Production (Claude Desktop/Web)
 **Configuration:** None needed
 
-Leave both `site_config.json` and Shams AI Gateway Settings empty.
+Leave both `site_config.json` and SAG Settings empty.
 
 ```bash
 # No CORS configuration needed!
@@ -150,7 +150,7 @@ Without CORS configuration:
 The CORS handler (`oauth_cors.py`) checks configuration in this order:
 
 1. **`frappe.conf.oauth_cors_allowed_origins`** (site_config.json)
-2. **Shams AI Gateway Settings** > allowed_public_client_origins
+2. **SAG Settings** > allowed_public_client_origins
 
 If neither is set, CORS is disabled (production default).
 
@@ -237,7 +237,7 @@ A: Only for browser-based OAuth clients like MCP Inspector during development.
 **Q: Is it safe to use `"*"` in production?**
 A: No. Only use `"*"` for local development. Use specific origins in production.
 
-**Q: Can I use both site_config.json and Shams AI Gateway Settings?**
+**Q: Can I use both site_config.json and SAG Settings?**
 A: Yes, but site_config.json takes precedence.
 
 **Q: Do I need to restart after changing site_config.json?**

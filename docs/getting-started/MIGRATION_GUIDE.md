@@ -49,7 +49,7 @@ Ensure you're running v2.2.0 or later:
 cd /path/to/frappe-bench
 
 # Update the app
-bench get-app --branch main https://github.com/buildswithpaul/Shams_AI_Gateway
+bench get-app --branch main https://github.com/buildswithpaul/Frappe_Assistant_Core
 
 # Or if already installed, pull latest
 cd apps/shams_ai_gateway
@@ -66,7 +66,7 @@ bench restart
 ### Step 2: Enable OAuth Features
 
 1. **Login to Frappe** as Administrator
-2. **Go to**: Desk → Setup → Integrations → Shams AI Gateway Settings
+2. **Go to**: Desk → Setup → Integrations → SAG Settings
 3. **OAuth tab:**
    - ✅ Enable "Show Authorization Server Metadata"
    - ✅ Enable "Enable Dynamic Client Registration"
@@ -321,7 +321,7 @@ print(result)
 
 **Solutions:**
 1. Verify `shams_ai_gateway` is installed and migrated
-2. Check Shams AI Gateway Settings → OAuth tab settings are enabled
+2. Check SAG Settings → OAuth tab settings are enabled
 3. Test endpoint: `curl https://your-site.com/.well-known/openid-configuration`
 4. Check Frappe error logs: `bench --site your-site logs`
 
@@ -330,7 +330,7 @@ print(result)
 **Cause:** Dynamic registration not enabled in settings
 
 **Solutions:**
-1. Go to Shams AI Gateway Settings → OAuth tab
+1. Go to SAG Settings → OAuth tab
 2. ✅ Enable "Enable Dynamic Client Registration"
 3. Save and try again
 
@@ -355,7 +355,7 @@ print(result)
 **Cause:** Origin not whitelisted for public clients
 
 **Solutions:**
-1. Go to Shams AI Gateway Settings → OAuth tab
+1. Go to SAG Settings → OAuth tab
 2. Add your origin to "Allowed Public Client Origins"
    - Example: `http://localhost:6274` for MCP Inspector
 3. Or use `*` for development (not recommended for production)
@@ -430,7 +430,7 @@ Don't delete your old API keys until OAuth migration is complete and tested.
 ### Step 3: Report Issues
 
 If you encounter issues:
-1. Report on GitHub: https://github.com/buildswithpaul/Shams_AI_Gateway/issues
+1. Report on GitHub: https://github.com/buildswithpaul/Frappe_Assistant_Core/issues
 2. Include error messages and logs
 3. Mention you're migrating from STDIO to OAuth
 
@@ -462,8 +462,8 @@ After successful migration:
 ## Getting Help
 
 **Community Support:**
-- GitHub Issues: https://github.com/buildswithpaul/Shams_AI_Gateway/issues
-- GitHub Discussions: https://github.com/buildswithpaul/Shams_AI_Gateway/discussions
+- GitHub Issues: https://github.com/buildswithpaul/Frappe_Assistant_Core/issues
+- GitHub Discussions: https://github.com/buildswithpaul/Frappe_Assistant_Core/discussions
 
 **Professional Support:**
 - Email: jypaulclinton@gmail.com

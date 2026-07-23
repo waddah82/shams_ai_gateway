@@ -9,8 +9,7 @@ description = "AI-powered ERP assistant with comprehensive MCP integration for F
 readme = "README.md"
 license = {text = "AGPL-3.0-or-later"}
 authors = [
-    {name = "Paul Clinton", email = "jypaulclinton@gmail.com"},
-    {name = "Shams Solutions"}
+    {name = "Paul Clinton", email = "jypaulclinton@gmail.com"}
 ]
 classifiers = [
     "Development Status :: 4 - Beta",
@@ -80,10 +79,10 @@ pdf-tables = [
 # to ensure they are installed automatically on all servers
 
 [project.urls]
-Homepage = "https://github.com/shams-solutions/shams_ai_gateway"
-Documentation = "https://github.com/shams-solutions/shams_ai_gateway#readme"
-Repository = "https://github.com/shams-solutions/shams_ai_gateway.git"
-"Bug Tracker" = "https://github.com/shams-solutions/shams_ai_gateway/issues"
+Homepage = "https://github.com/buildswithpaul/Frappe_Assistant_Core"
+Documentation = "https://github.com/buildswithpaul/Frappe_Assistant_Core/wiki"
+Repository = "https://github.com/buildswithpaul/Frappe_Assistant_Core.git"
+"Bug Tracker" = "https://github.com/buildswithpaul/Frappe_Assistant_Core/issues"
 
 [tool.setuptools]
 include-package-data = true

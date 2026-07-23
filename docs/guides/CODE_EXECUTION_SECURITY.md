@@ -19,7 +19,7 @@ The `run_python_code` tool provides a powerful capability for AI agents to perfo
 
 **Configuration:**
 ```
-Shams AI Gateway Settings → Security → Execution Timeout (seconds)
+SAG Settings → Security → Execution Timeout (seconds)
 ```
 
 **What happens when exceeded:**
@@ -44,7 +44,7 @@ Shams AI Gateway Settings → Security → Execution Timeout (seconds)
 
 **Configuration:**
 ```
-Shams AI Gateway Settings → Security → Max Memory (MB)
+SAG Settings → Security → Max Memory (MB)
 ```
 
 **What happens when exceeded:**
@@ -71,7 +71,7 @@ Maximum allowed memory: 512 MB
 
 **Configuration:**
 ```
-Shams AI Gateway Settings → Security → Max CPU Time (seconds)
+SAG Settings → Security → Max CPU Time (seconds)
 ```
 
 ### Recursion Depth Limit
@@ -85,7 +85,7 @@ Shams AI Gateway Settings → Security → Max CPU Time (seconds)
 
 **Configuration:**
 ```
-Shams AI Gateway Settings → Security → Max Recursion Depth
+SAG Settings → Security → Max Recursion Depth
 ```
 
 **What happens when exceeded:**
@@ -161,7 +161,7 @@ The `db` object provided in the sandbox is a read-only wrapper:
 
 ### Via Settings UI
 
-1. Go to **Shams AI Gateway Settings**
+1. Go to **SAG Settings**
 2. Navigate to the **Security** tab
 3. Adjust the execution limits as needed
 4. Save changes (effective immediately for new executions)
@@ -171,7 +171,7 @@ The `db` object provided in the sandbox is a read-only wrapper:
 ```python
 import frappe
 
-settings = frappe.get_doc("Shams AI Gateway Settings")
+settings = frappe.get_doc("SAG Settings")
 settings.code_execution_timeout = 60  # seconds
 settings.code_execution_max_memory_mb = 1024  # MB
 settings.code_execution_max_cpu_seconds = 120  # seconds

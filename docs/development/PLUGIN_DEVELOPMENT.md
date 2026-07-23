@@ -426,7 +426,7 @@ This plugin provides awesome functionality for Shams AI Gateway.
    ```
 ````
 
-2. Enable plugin in Shams AI Gateway Settings
+2. Enable plugin in SAG Settings
 
 ## Usage
 

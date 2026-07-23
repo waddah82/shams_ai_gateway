@@ -360,7 +360,7 @@ import frappe
 
 duplicates = frappe.db.sql("""
     SELECT plugin_name, COUNT(*) as cnt
-    FROM `tabFAC Plugin Configuration`
+    FROM `tabSAG Plugin Configuration`
     GROUP BY plugin_name
     HAVING cnt > 1
 """, as_dict=True)
@@ -422,7 +422,7 @@ When plugins or tools are removed from the codebase:
 
 ## Migration from Legacy JSON
 
-If you're upgrading from a version that used JSON storage in `Shams AI Gateway Settings`, the migration is automatic:
+If you're upgrading from a version that used JSON storage in `SAG Settings`, the migration is automatic:
 
 1. **Run `bench migrate`** - This triggers the migration patch
 2. **Verify records** - Check `/app/sag-plugin-configuration` for plugin records

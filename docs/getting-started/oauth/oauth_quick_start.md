@@ -4,7 +4,7 @@
 
 ### Step 1: Open Settings
 1. Go to your Frappe site
-2. Search for "Shams AI Gateway Settings"
+2. Search for "SAG Settings"
 3. Click the **OAuth** tab
 
 ### Step 2: Enable OAuth
@@ -118,4 +118,4 @@ Read the full guide: [OAuth Setup Guide](./oauth_setup_guide.md)
 
 Your Shams AI Gateway is now OAuth-enabled and ready for MCP clients.
 
-Questions? Open an issue: https://github.com/buildswithpaul/Shams_AI_Gateway/issues
+Questions? Open an issue: https://github.com/buildswithpaul/Frappe_Assistant_Core/issues

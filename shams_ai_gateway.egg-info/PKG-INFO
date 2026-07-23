@@ -1,3 +1,66 @@
+Metadata-Version: 2.4
+Name: shams_ai_gateway
+Version: 2.5.0
+Summary: AI-powered ERP assistant with comprehensive MCP integration for Frappe framework
+Author-email: Paul Clinton <jypaulclinton@gmail.com>
+License: AGPL-3.0-or-later
+Project-URL: Homepage, https://github.com/buildswithpaul/Frappe_Assistant_Core
+Project-URL: Documentation, https://github.com/buildswithpaul/Frappe_Assistant_Core/wiki
+Project-URL: Repository, https://github.com/buildswithpaul/Frappe_Assistant_Core.git
+Project-URL: Bug Tracker, https://github.com/buildswithpaul/Frappe_Assistant_Core/issues
+Keywords: frappe,erp,ai,assistant,mcp,analysis,business-intelligence
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Framework :: Frappe
+Classifier: Topic :: Office/Business :: Enterprise Resource Planning (ERP)
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pandas>=1.3.0
+Requires-Dist: numpy>=1.20.0
+Requires-Dist: matplotlib>=3.4.0
+Requires-Dist: seaborn>=0.11.0
+Requires-Dist: plotly>=5.0.0
+Requires-Dist: scipy>=1.7.0
+Requires-Dist: openpyxl>=3.0.0
+Requires-Dist: scikit-learn>=1.0.0
+Requires-Dist: bokeh>=2.4.0
+Requires-Dist: altair>=4.1.0
+Requires-Dist: sympy>=1.8.0
+Requires-Dist: networkx>=2.6.0
+Requires-Dist: xlsxwriter>=3.0.0
+Requires-Dist: requests>=2.25.0
+Requires-Dist: jsonschema>=4.0.0
+Requires-Dist: python-dotenv>=1.0.0
+Requires-Dist: python-multipart>=0.0.6
+Requires-Dist: httpx>=0.24.0
+Requires-Dist: pypdf>=3.0.0
+Requires-Dist: Pillow>=10.0.0
+Requires-Dist: python-docx>=0.8.11
+Requires-Dist: chardet<6.0.0,>=5.1.0
+Requires-Dist: pymupdf>=1.24.0
+Requires-Dist: python-magic>=0.4.27
+Requires-Dist: beautifulsoup4<5,>=4.12
+Provides-Extra: dev
+Requires-Dist: pytest>=6.0; extra == "dev"
+Requires-Dist: pytest-cov>=2.12; extra == "dev"
+Requires-Dist: black>=21.0; extra == "dev"
+Requires-Dist: flake8>=3.9; extra == "dev"
+Requires-Dist: mypy>=0.910; extra == "dev"
+Provides-Extra: ocr
+Requires-Dist: paddleocr>=2.9.0; extra == "ocr"
+Requires-Dist: paddlepaddle<3.1.0,>=2.6.0; extra == "ocr"
+Provides-Extra: pdf-tables
+Requires-Dist: pdfplumber>=0.9.0; extra == "pdf-tables"
+Dynamic: license-file
+
 # Shams AI Gateway
 
 > Talk to your ERPNext site. SAG lets Claude, ChatGPT, and other

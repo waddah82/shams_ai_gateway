@@ -171,10 +171,10 @@ graph TD
 
 ## 📞 Support
 
-- **Main Project**: [Shams_AI_Gateway](https://github.com/buildswithpaul/Shams_AI_Gateway)
-- **Issues**: [GitHub Issues](https://github.com/buildswithpaul/Shams_AI_Gateway/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/buildswithpaul/Shams_AI_Gateway/discussions)
-- **Documentation**: [Project Docs](https://github.com/buildswithpaul/Shams_AI_Gateway/blob/main/docs/)
+- **Main Project**: [Frappe_Assistant_Core](https://github.com/buildswithpaul/Frappe_Assistant_Core)
+- **Issues**: [GitHub Issues](https://github.com/buildswithpaul/Frappe_Assistant_Core/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/buildswithpaul/Frappe_Assistant_Core/discussions)
+- **Documentation**: [Project Docs](https://github.com/buildswithpaul/Frappe_Assistant_Core/blob/main/docs/)
 
 ## 📄 License
 

@@ -162,7 +162,7 @@ Shams AI Gateway provides **21 tools** organized in a plugin-based architecture:
 ### Links
 - All internal links use relative paths
 - External links use absolute URLs
-- Broken links? [Report an issue](https://github.com/buildswithpaul/Shams_AI_Gateway/issues)
+- Broken links? [Report an issue](https://github.com/buildswithpaul/Frappe_Assistant_Core/issues)
 
 ### Code Examples
 - Python examples use Frappe v15 compatible code
@@ -174,8 +174,8 @@ Shams AI Gateway provides **21 tools** organized in a plugin-based architecture:
 ## 🆘 Need Help?
 
 ### Community Support
-- 🐛 **Bug Reports**: [GitHub Issues](https://github.com/buildswithpaul/Shams_AI_Gateway/issues)
-- 💬 **Questions**: [GitHub Discussions](https://github.com/buildswithpaul/Shams_AI_Gateway/discussions)
+- 🐛 **Bug Reports**: [GitHub Issues](https://github.com/buildswithpaul/Frappe_Assistant_Core/issues)
+- 💬 **Questions**: [GitHub Discussions](https://github.com/buildswithpaul/Frappe_Assistant_Core/discussions)
 - 📧 **Email**: jypaulclinton@gmail.com
 
 ### Professional Support

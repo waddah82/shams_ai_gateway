@@ -347,7 +347,7 @@ All MCP requests follow JSON-RPC 2.0 specification:
       "tools": {}
     },
     "serverInfo": {
-      "name": "frappe-assistant-core",
+      "name": "shams-ai-gateway",
       "version": "2.0.0"
     }
   },
@@ -466,7 +466,7 @@ We built the SAG MCP Server instead of using generic libraries because:
 from shams_ai_gateway.mcp.server import MCPServer
 
 # Create MCP server instance
-mcp = MCPServer("frappe-assistant-core")
+mcp = MCPServer("shams-ai-gateway")
 
 # Register the main endpoint
 @mcp.register(allow_guest=True, xss_safe=True)
@@ -601,7 +601,7 @@ Content-Type: application/json
 **Problem:** Cannot fetch `/.well-known/openid-configuration`
 
 **Solutions:**
-1. Check that OAuth discovery is enabled in Shams AI Gateway Settings
+1. Check that OAuth discovery is enabled in SAG Settings
 2. Verify Frappe site URL is correct (include https://)
 3. Test endpoint directly in browser
 4. Check server logs for errors
@@ -717,8 +717,8 @@ While MCP doesn't support batch requests, you can optimize by:
 
 ## Support
 
-- **GitHub Issues**: https://github.com/buildswithpaul/Shams_AI_Gateway/issues
-- **Documentation**: https://github.com/buildswithpaul/Shams_AI_Gateway/tree/main/docs
+- **GitHub Issues**: https://github.com/buildswithpaul/Frappe_Assistant_Core/issues
+- **Documentation**: https://github.com/buildswithpaul/Frappe_Assistant_Core/tree/main/docs
 - **Email**: jypaulclinton@gmail.com
 
 ---

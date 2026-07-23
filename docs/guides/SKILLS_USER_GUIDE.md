@@ -31,7 +31,7 @@ Skills come in two flavours:
 | **Tool Usage** | Teach the LLM how to use one specific MCP tool well. | Yes, via the `linked_tool` field. |
 | **Workflow** | Describe a multi-step procedure that may span several tools. | No. |
 
-Every skill gets a stable URI of the form `sag://skills/<skill-id>` and is discoverable via `resources/list`.
+Every skill gets a stable URI of the form `fac://skills/<skill-id>` and is discoverable via `resources/list`.
 
 ### Key concepts
 
@@ -204,7 +204,7 @@ For a Tool Usage skill, `Linked Tool` is the single most important field — it'
 
 ## Skill Mode — Supplementary vs Replace
 
-Shams AI Gateway Settings has a **Skill Mode** setting that controls how skills interact with `tools/list`. There are two modes:
+SAG Settings has a **Skill Mode** setting that controls how skills interact with `tools/list`. There are two modes:
 
 ### Supplementary (default)
 
@@ -217,7 +217,7 @@ This is the safe default: no tool-description changes, no risk of breaking exist
 For every tool that has a linked Published skill, the tool's description in `tools/list` is replaced with a short template:
 
 ```
-<tool_name>: <skill description>. Detailed guidance: sag://skills/<skill-id>
+<tool_name>: <skill description>. Detailed guidance: fac://skills/<skill-id>
 ```
 
 This is a **token-optimization** strategy: the tool listing becomes much shorter, and the LLM is pointed at the skill URI for the details. It's effective when:
@@ -229,7 +229,7 @@ Tools without a linked Published skill keep their original descriptions under bo
 
 The implementation lives in [`mcp/server.py:303-334`](../../shams_ai_gateway/mcp/server.py) and pulls the tool → skill map from [`api/handlers/resources.py:215-229`](../../shams_ai_gateway/api/handlers/resources.py).
 
-Change modes in **Shams AI Gateway Settings** → **Skill Mode**.
+Change modes in **SAG Settings** → **Skill Mode**.
 
 ---
 

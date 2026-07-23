@@ -212,7 +212,7 @@ Tools are organized into plugins that can be enabled/disabled as needed:
 - **OCR Backends**:
   - **PaddleOCR** (default): Local OCR using PaddleOCR 3.x with PaddlePaddle. Fast, no external service required. Supports 80+ languages. Includes C++ crash recovery with automatic instance reset.
   - **Ollama Vision** (optional): Uses Ollama with a vision model (e.g., `deepseek-ocr`) for AI-powered text extraction. Better at understanding document context and layout. Requires a running Ollama instance. Falls back to PaddleOCR if Ollama fails or returns empty results.
-- **OCR Configuration** (via Shams AI Gateway Settings):
+- **OCR Configuration** (via SAG Settings):
   - `ocr_backend`: Select `paddleocr` or `ollama`
   - `ocr_language`: Default OCR language (e.g., `en`, `fr`, `de`)
   - `ollama_api_url`: Ollama server URL (default: `http://localhost:11434`)

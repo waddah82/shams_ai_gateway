@@ -74,9 +74,9 @@ shams_ai_gateway/
 ├── utils/                       # Utility modules
 │   ├── plugin_manager.py        # Plugin discovery and loading
 │   └── logger.py                # Professional logging system
-└── shams_ai_gateway/              # Frappe DocType implementations
+└── sag/              # Frappe DocType implementations
     └── doctype/
-        ├── shams_ai_gateway_settings/        # Main settings
+        ├── sag_settings/        # Main settings
         ├── assistant_plugin_repository/    # Plugin management
         └── assistant_tool_registry/        # Tool registration
 ```
@@ -371,7 +371,7 @@ from shams_ai_gateway.mcp.tool_adapter import register_base_tool
 from shams_ai_gateway.core.tool_registry import ToolRegistry
 
 # Create MCP server
-mcp = MCPServer("frappe-assistant-core", "2.0.0")
+mcp = MCPServer("shams-ai-gateway", "2.0.0")
 
 # Get all available tools from registry
 registry = ToolRegistry()
@@ -473,14 +473,14 @@ def get_oauth_settings():
     Get OAuth settings from appropriate source.
 
     Frappe v16+: Uses native OAuth Settings doctype
-    Frappe v15: Uses Shams AI Gateway Settings with OAuth fields
+    Frappe v15: Uses SAG Settings with OAuth fields
     """
     if frappe.db.exists("DocType", "OAuth Settings"):
         # Frappe v16+ has native OAuth Settings
         return frappe.get_single("OAuth Settings")
     else:
         # Frappe v15 - use our backported settings
-        return frappe.get_single("Shams AI Gateway Settings")
+        return frappe.get_single("SAG Settings")
 ```
 
 ### Request Flow Diagram
@@ -956,15 +956,15 @@ def user_has_access(self, user: str = None) -> bool:
 
 ```python
 # Toggle a single tool
-from shams_ai_gateway.shams_ai_gateway.doctype.sag_tool_configuration.sag_tool_configuration import toggle_tool
+from shams_ai_gateway.sag.doctype.sag_tool_configuration.sag_tool_configuration import toggle_tool
 toggle_tool("run_python_code", enabled=False)
 
 # Bulk toggle multiple tools
-from shams_ai_gateway.shams_ai_gateway.doctype.sag_tool_configuration.sag_tool_configuration import bulk_toggle_tools
+from shams_ai_gateway.sag.doctype.sag_tool_configuration.sag_tool_configuration import bulk_toggle_tools
 bulk_toggle_tools(["delete_document", "run_python_code"], enabled=False)
 
 # Check tool access
-from shams_ai_gateway.shams_ai_gateway.doctype.sag_tool_configuration.sag_tool_configuration import get_tool_access_status
+from shams_ai_gateway.sag.doctype.sag_tool_configuration.sag_tool_configuration import get_tool_access_status
 status = get_tool_access_status("delete_document", user="test@example.com")
 ```
 
@@ -1684,7 +1684,7 @@ permission_query_conditions = {
 }
 
 # Security settings can be customized through DocTypes:
-# - Shams AI Gateway Settings: General security configuration
+# - SAG Settings: General security configuration
 # - Assistant Tool Registry: Tool-specific permission settings
 ```
 
@@ -1797,7 +1797,7 @@ PDF bytes
 
 ### Configuration
 
-OCR settings are managed via **Shams AI Gateway Settings** DocType:
+OCR settings are managed via **SAG Settings** DocType:
 
 | Field | Description | Default |
 |-------|-------------|---------|
@@ -1951,7 +1951,7 @@ Content-Type: application/json
 cd frappe-bench
 
 # Get the app
-bench get-app https://github.com/paulclinton/frappe-assistant-core
+bench get-app https://github.com/paulclinton/shams-ai-gateway
 
 # Install on site
 bench --site [site-name] install-app shams_ai_gateway
@@ -2072,9 +2072,9 @@ For end-user and developer-facing docs see the [Skills User Guide](../guides/SKI
 
 ### Storage model
 
-Skills live in the `SAG Skill` DocType ([`sag_skill.json`](../../shams_ai_gateway/shams_ai_gateway/doctype/sag_skill/sag_skill.json)). Notable columns:
+Skills live in the `SAG Skill` DocType ([`sag_skill.json`](../../shams_ai_gateway/sag/doctype/sag_skill/sag_skill.json)). Notable columns:
 
-- `skill_id` (Data, unique) — matches `^[a-z0-9_-]+$`; used as the URI suffix in `sag://skills/<skill_id>`.
+- `skill_id` (Data, unique) — matches `^[a-z0-9_-]+$`; used as the URI suffix in `fac://skills/<skill_id>`.
 - `content` (Markdown Editor) — the full markdown body returned by `resources/read`.
 - `status` (Select) — `Draft` / `Published` / `Deprecated`.
 - `visibility` (Select) — `Private` / `Shared` / `Public`.
@@ -2085,7 +2085,7 @@ Skills live in the `SAG Skill` DocType ([`sag_skill.json`](../../shams_ai_gatewa
 - `shared_with_roles` (Table MultiSelect → Has Role) — populated when `visibility="Shared"`.
 - `use_count` (Int), `last_used` (Datetime) — analytics, bumped inside `SkillManager.read_skill_content`.
 
-DocType-level validation is in [`sag_skill.py`](../../shams_ai_gateway/shams_ai_gateway/doctype/sag_skill/sag_skill.py): `skill_id` regex + uniqueness, `shared_with_roles` required when Shared, and a system-skill deletion guard that only admits deletes from the hook loader (via `flags.allow_system_delete`) or when the owning `source_app` is no longer installed.
+DocType-level validation is in [`sag_skill.py`](../../shams_ai_gateway/sag/doctype/sag_skill/sag_skill.py): `skill_id` regex + uniqueness, `shared_with_roles` required when Shared, and a system-skill deletion guard that only admits deletes from the hook loader (via `flags.allow_system_delete`) or when the owning `source_app` is no longer installed.
 
 ### SkillManager
 
@@ -2105,16 +2105,16 @@ A module-level `get_skill_manager()` factory is kept for backwards compatibility
 The MCP server exposes two resource endpoints, both declared in `initialize` capabilities:
 
 - **`resources/list`** ([`resources.py:237`](../../shams_ai_gateway/api/handlers/resources.py)) — calls `SkillManager.get_user_accessible_skills()`, filters to `status == "Published"`, and returns each as an MCP resource descriptor. Returns `{"resources": []}` when the `SAG Skill` table doesn't exist yet (e.g. before first migrate).
-- **`resources/read`** ([`resources.py:256`](../../shams_ai_gateway/api/handlers/resources.py)) — validates the URI against `sag://skills/<slug>` and the `^[a-z0-9_-]+$` slug regex, then delegates to `SkillManager.read_skill_content()`. Raises `ValueError` for malformed URIs or missing skills and re-raises `frappe.PermissionError` so the MCP layer can map it to the right JSON-RPC error.
+- **`resources/read`** ([`resources.py:256`](../../shams_ai_gateway/api/handlers/resources.py)) — validates the URI against `fac://skills/<slug>` and the `^[a-z0-9_-]+$` slug regex, then delegates to `SkillManager.read_skill_content()`. Raises `ValueError` for malformed URIs or missing skills and re-raises `frappe.PermissionError` so the MCP layer can map it to the right JSON-RPC error.
 
 Both handlers are wired into the MCPServer dispatcher at [`mcp/server.py:201-206`](../../shams_ai_gateway/mcp/server.py) (`resources/list`, `resources/read`, and a stub `resources/templates/list` that returns empty).
 
 ### Tool-description replacement (`skill_mode = replace`)
 
-`tools/list` consults `Shams AI Gateway Settings.skill_mode`:
+`tools/list` consults `SAG Settings.skill_mode`:
 
 ```python
-settings = frappe.get_single("Shams AI Gateway Settings")
+settings = frappe.get_single("SAG Settings")
 if getattr(settings, "skill_mode", "supplementary") == "replace":
     skill_replace_map = get_skill_manager().get_tool_skill_map()
 ```
@@ -2122,7 +2122,7 @@ if getattr(settings, "skill_mode", "supplementary") == "replace":
 For each registered tool in the response, if the tool name is in the replace map, its description is rewritten to:
 
 ```
-<tool_name>: <skill description>. Detailed guidance: sag://skills/<skill_id>
+<tool_name>: <skill description>. Detailed guidance: fac://skills/<skill_id>
 ```
 
 See [`mcp/server.py:303-334`](../../shams_ai_gateway/mcp/server.py). Tools without a linked Published skill keep their original descriptions regardless of mode.
@@ -2151,8 +2151,8 @@ The two layers agree for Published skills; Drafts are only reachable through the
 
 Skill queries use a Redis cache under the `"skills"` key (site-scoped). The cache is invalidated on:
 
-- `SAG Skill.on_update` — every save ([`sag_skill.py:56-58`](../../shams_ai_gateway/shams_ai_gateway/doctype/sag_skill/sag_skill.py))
-- `SAG Skill.on_trash` — every delete ([`sag_skill.py:60-69`](../../shams_ai_gateway/shams_ai_gateway/doctype/sag_skill/sag_skill.py))
+- `SAG Skill.on_update` — every save ([`sag_skill.py:56-58`](../../shams_ai_gateway/sag/doctype/sag_skill/sag_skill.py))
+- `SAG Skill.on_trash` — every delete ([`sag_skill.py:60-69`](../../shams_ai_gateway/sag/doctype/sag_skill/sag_skill.py))
 - Admin UI publish/unpublish toggles
 
 This makes skills safe under multi-worker Gunicorn deployments without extra synchronization.
@@ -2177,7 +2177,7 @@ This makes skills safe under multi-worker Gunicorn deployments without extra syn
 
 ### Support & Resources
 
-- **GitHub Repository**: [frappe-assistant-core](https://github.com/paulclinton/frappe-assistant-core)
+- **GitHub Repository**: [shams-ai-gateway](https://github.com/paulclinton/shams-ai-gateway)
 - **License**: AGPLV3 License
 - **Issues**: GitHub Issues for bug reports and feature requests
 

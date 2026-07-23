@@ -94,7 +94,7 @@ To enable/disable specific tools by name:
 ```python
 # Using the API
 import frappe
-from shams_ai_gateway.shams_ai_gateway.doctype.sag_tool_configuration.sag_tool_configuration import bulk_toggle_tools
+from shams_ai_gateway.sag.doctype.sag_tool_configuration.sag_tool_configuration import bulk_toggle_tools
 
 # Disable multiple tools
 result = bulk_toggle_tools(
@@ -242,7 +242,7 @@ The `auto_detected_category` field shows what the system detected, while `tool_c
 ### Check Tool Access
 
 ```python
-from shams_ai_gateway.shams_ai_gateway.doctype.sag_tool_configuration.sag_tool_configuration import get_tool_access_status
+from shams_ai_gateway.sag.doctype.sag_tool_configuration.sag_tool_configuration import get_tool_access_status
 
 # Check if current user can access a tool
 result = get_tool_access_status("delete_document")
@@ -260,7 +260,7 @@ print(result)
 ### Toggle a Single Tool
 
 ```python
-from shams_ai_gateway.shams_ai_gateway.doctype.sag_tool_configuration.sag_tool_configuration import toggle_tool
+from shams_ai_gateway.sag.doctype.sag_tool_configuration.sag_tool_configuration import toggle_tool
 
 # Disable a tool
 result = toggle_tool("run_python_code", enabled=False)
@@ -271,7 +271,7 @@ print(result)
 ### Bulk Toggle Tools
 
 ```python
-from shams_ai_gateway.shams_ai_gateway.doctype.sag_tool_configuration.sag_tool_configuration import bulk_toggle_tools
+from shams_ai_gateway.sag.doctype.sag_tool_configuration.sag_tool_configuration import bulk_toggle_tools
 
 # Enable multiple tools
 result = bulk_toggle_tools(
@@ -360,7 +360,7 @@ viz_tools = frappe.get_all(
 )
 
 # Disable all
-from shams_ai_gateway.shams_ai_gateway.doctype.sag_tool_configuration.sag_tool_configuration import bulk_toggle_tools
+from shams_ai_gateway.sag.doctype.sag_tool_configuration.sag_tool_configuration import bulk_toggle_tools
 bulk_toggle_tools(viz_tools, enabled=False)
 ```
 

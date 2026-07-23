@@ -12,7 +12,7 @@ This guide will help you configure OAuth for your Shams AI Gateway installation.
 
 ### For Most Users
 
-1. Go to **Shams AI Gateway Settings**
+1. Go to **SAG Settings**
 2. Click the **OAuth** tab
 3. Check ✅ **Enable Dynamic Client Registration**
 4. For MCP Inspector, add `http://localhost:6274` to **Allowed Public Client Origins**
@@ -109,7 +109,7 @@ These fields customize metadata shown to OAuth clients. Most users can ignore th
 **Example:** "ACME Corp ERP System"
 
 #### Documentation URL
-**Default:** "https://github.com/buildswithpaul/Shams_AI_Gateway"
+**Default:** "https://github.com/buildswithpaul/Frappe_Assistant_Core"
 **Example:** "https://docs.acme.com/api"
 
 #### Policy URI
@@ -242,7 +242,7 @@ https://your-frappe-site.com/.well-known/oauth-protected-resource
 
 ### Issue: "Dynamic client registration is not enabled"
 
-**Solution:** Go to Shams AI Gateway Settings → OAuth → Enable "Enable Dynamic Client Registration"
+**Solution:** Go to SAG Settings → OAuth → Enable "Enable Dynamic Client Registration"
 
 ---
 
@@ -350,7 +350,7 @@ This is a known limitation when:
 
 This OAuth implementation works with:
 
-✅ **Frappe v15** - Uses Shams AI Gateway Settings (this configuration)
+✅ **Frappe v15** - Uses SAG Settings (this configuration)
 ✅ **Frappe v16+** - Automatically uses native Frappe OAuth Settings
 
 **Upgrade Path:**
@@ -749,7 +749,7 @@ Prevents authorization code interception attacks.
 
 ### Support
 
-- GitHub Issues: https://github.com/buildswithpaul/Shams_AI_Gateway/issues
+- GitHub Issues: https://github.com/buildswithpaul/Frappe_Assistant_Core/issues
 - Frappe Forum: https://discuss.frappe.io/
 
 ---
@@ -763,7 +763,7 @@ Prevents authorization code interception attacks.
 - Added Protected Resource Metadata (RFC 9728)
 - Added PKCE support (RFC 7636)
 - Added CORS handling for public clients
-- Simplified configuration in Shams AI Gateway Settings
+- Simplified configuration in SAG Settings
 - Automatic Frappe v15/v16 compatibility
 - Added comprehensive OAuth flow documentation for MCP clients
 - Converted documentation diagrams to Mermaid format

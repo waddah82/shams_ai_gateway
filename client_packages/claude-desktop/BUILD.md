@@ -554,7 +554,7 @@ Enable debug logging in Claude Desktop:
 
 - **[Claude Desktop Extensions](https://www.anthropic.com/engineering/desktop-extensions)** - Official documentation
 - **[MCP Specification](https://modelcontextprotocol.io)** - Protocol details
-- **[Shams AI Gateway](https://github.com/buildswithpaul/Shams_AI_Gateway)** - Server-side documentation
+- **[Shams AI Gateway](https://github.com/buildswithpaul/Frappe_Assistant_Core)** - Server-side documentation
 - **[Extension Examples](https://github.com/anthropics/claude-desktop-examples)** - Community examples
 
 ---

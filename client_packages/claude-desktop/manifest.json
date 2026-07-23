@@ -11,10 +11,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/buildswithpaul/Shams_AI_Gateway"
+    "url": "https://github.com/buildswithpaul/Frappe_Assistant_Core"
   },
-  "homepage": "https://github.com/buildswithpaul/Shams_AI_Gateway",
-  "support": "https://github.com/buildswithpaul/Shams_AI_Gateway/issues",
+  "homepage": "https://github.com/buildswithpaul/Frappe_Assistant_Core",
+  "support": "https://github.com/buildswithpaul/Frappe_Assistant_Core/issues",
   "icon": "icon.png",
   "screenshots": [
     "assets/screenshots/dashboard.png",

@@ -113,7 +113,7 @@ Click to expand only if needed:
 
 ### Code Changes
 
-1. **shams_ai_gateway_settings.json**
+1. **sag_settings.json**
    - Removed `skip_authorization` field
    - Removed `show_social_login_key_as_authorization_server` field
    - Improved field descriptions and labels
@@ -188,7 +188,7 @@ The removed fields were:
 
 Questions or issues?
 
-- 📁 GitHub Issues: https://github.com/buildswithpaul/Shams_AI_Gateway/issues
+- 📁 GitHub Issues: https://github.com/buildswithpaul/Frappe_Assistant_Core/issues
 - 💬 Frappe Forum: https://discuss.frappe.io/
 
 ---

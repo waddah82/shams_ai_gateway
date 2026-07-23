@@ -161,7 +161,7 @@ class StdioMCPWrapper:
             "result": {
                 "protocolVersion": "2025-06-18",
                 "capabilities": {"tools": {}, "prompts": {}, "resources": {}},
-                "serverInfo": {"name": "frappe-assistant-core", "version": "1.0.0"},
+                "serverInfo": {"name": "shams-ai-gateway", "version": "1.0.0"},
             },
         }
 

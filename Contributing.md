@@ -44,8 +44,8 @@ Help us improve our docs!
 
 1. **Fork and Clone**
    ```bash
-   git clone https://github.com/YOUR_USERNAME/frappe-assistant-core.git
-   cd frappe-assistant-core
+   git clone https://github.com/YOUR_USERNAME/shams-ai-gateway.git
+   cd shams-ai-gateway
    ```
 
 2. **Install in Development Mode**
@@ -135,4 +135,4 @@ Thank you for contributing to Shams AI Gateway! Together, we're building the fut
 
 ---
 
-**Questions?** Feel free to reach out via [GitHub Discussions](hhttps://github.com/buildswithpaul/Shams_AI_Gateway/discussions) or email [jypaulclinton@gmail.com](mailto:jypaulclinton@gmail.com).
+**Questions?** Feel free to reach out via [GitHub Discussions](hhttps://github.com/buildswithpaul/Frappe_Assistant_Core/discussions) or email [jypaulclinton@gmail.com](mailto:jypaulclinton@gmail.com).

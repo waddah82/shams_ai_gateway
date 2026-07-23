@@ -1,6 +1,6 @@
 # Claude for Frappe ERP - Desktop Extension
 
-[![Version](https://img.shields.io/badge/version-1.2.0-blue.svg)](https://github.com/buildswithpaul/Shams_AI_Gateway)
+[![Version](https://img.shields.io/badge/version-1.2.0-blue.svg)](https://github.com/buildswithpaul/Frappe_Assistant_Core)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg)](#compatibility)
 [![Claude Desktop](https://img.shields.io/badge/Claude%20Desktop-MCP%20Extension-purple.svg)](https://claude.ai/desktop)
@@ -8,7 +8,7 @@
 
 A **Claude Desktop Extension** that connects your **Claude Desktop** application to **Frappe ERP systems** via the **Shams AI Gateway** app. This extension package provides an intelligent MCP (Model Context Protocol) server for AI-powered business data analysis and document management.
 
-> **Part of the [Shams AI Gateway](https://github.com/buildswithpaul/Shams_AI_Gateway) project** - This is the client-side extension that connects to the server-side Frappe app.
+> **Part of the [Shams AI Gateway](https://github.com/buildswithpaul/Frappe_Assistant_Core) project** - This is the client-side extension that connects to the server-side Frappe app.
 
 ## 🌟 Features
 
@@ -42,7 +42,7 @@ A **Claude Desktop Extension** that connects your **Claude Desktop** application
 
 - **Claude Desktop** installed and running
 - **Frappe/ERPNext instance** with API access enabled
-- **[Shams AI Gateway app](https://github.com/buildswithpaul/Shams_AI_Gateway)** installed on your Frappe server
+- **[Shams AI Gateway app](https://github.com/buildswithpaul/Frappe_Assistant_Core)** installed on your Frappe server
 - **Python 3.8+** available on your system
 
 > **Important**: You must install the Shams AI Gateway app on your Frappe server first. This extension connects to that app.
@@ -55,7 +55,7 @@ First, install the server-side app on your Frappe instance:
 
 ```bash
 # On your Frappe server
-bench get-app shams_ai_gateway https://github.com/buildswithpaul/Shams_AI_Gateway
+bench get-app shams_ai_gateway https://github.com/buildswithpaul/Frappe_Assistant_Core
 bench install-app shams_ai_gateway
 bench restart
 ```
@@ -64,7 +64,7 @@ bench restart
 
 **Option A: Direct Download (Recommended)**
 
-1. Download the latest `claude-for-frappe-v1.2.0.dxt` from the [main project releases](https://github.com/buildswithpaul/Shams_AI_Gateway/releases)
+1. Download the latest `claude-for-frappe-v1.2.0.dxt` from the [main project releases](https://github.com/buildswithpaul/Frappe_Assistant_Core/releases)
 2. Double-click the `.dxt` file to install in Claude Desktop
 3. Configure your Frappe server connection (see [Configuration](#configuration))
 
@@ -72,8 +72,8 @@ bench restart
 
 ```bash
 # Clone the main repository
-git clone https://github.com/buildswithpaul/Shams_AI_Gateway.git
-cd Shams_AI_Gateway/client_packages/claude-desktop
+git clone https://github.com/buildswithpaul/Frappe_Assistant_Core.git
+cd Frappe_Assistant_Core/client_packages/claude-desktop
 
 # Install dependencies
 pip install -r requirements.txt
@@ -161,8 +161,8 @@ This extension is part of the larger Shams AI Gateway project. For development:
 - **[BUILD.md](BUILD.md)** - Complete guide to building DXT packages and validating manifests
 - **[CONTRIBUTING.md](CONTRIBUTING.md)** - Development setup and guidelines for this extension
 - **[Official Extension Docs](https://www.anthropic.com/engineering/desktop-extensions)** - Anthropic's desktop extension documentation
-- **Core App Development**: See the [main project](https://github.com/buildswithpaul/Shams_AI_Gateway) for server-side development
-- **Tool Development**: See [Tool Development Guide](https://github.com/buildswithpaul/Shams_AI_Gateway/blob/main/docs/PLUGIN_DEVELOPMENT.md)
+- **Core App Development**: See the [main project](https://github.com/buildswithpaul/Frappe_Assistant_Core) for server-side development
+- **Tool Development**: See [Tool Development Guide](https://github.com/buildswithpaul/Frappe_Assistant_Core/blob/main/docs/PLUGIN_DEVELOPMENT.md)
 
 ## 📋 Requirements
 
@@ -212,17 +212,17 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-- 🐛 **Bug Reports**: [GitHub Issues](https://github.com/buildswithpaul/Shams_AI_Gateway/issues)
-- 💬 **Discussions**: [GitHub Discussions](https://github.com/buildswithpaul/Shams_AI_Gateway/discussions)
-- 📖 **Documentation**: [Shams AI Gateway Docs](https://github.com/buildswithpaul/Shams_AI_Gateway/blob/main/docs/)
+- 🐛 **Bug Reports**: [GitHub Issues](https://github.com/buildswithpaul/Frappe_Assistant_Core/issues)
+- 💬 **Discussions**: [GitHub Discussions](https://github.com/buildswithpaul/Frappe_Assistant_Core/discussions)
+- 📖 **Documentation**: [Shams AI Gateway Docs](https://github.com/buildswithpaul/Frappe_Assistant_Core/blob/main/docs/)
 - 📧 **Email**: jypaulclinton@gmail.com
 
 ### Related Documentation
 
-- **[Shams AI Gateway](https://github.com/buildswithpaul/Shams_AI_Gateway)** - Main project repository
-- **[Installation Guide](https://github.com/buildswithpaul/Shams_AI_Gateway/blob/main/docs/README.md)** - Complete setup instructions
-- **[API Reference](https://github.com/buildswithpaul/Shams_AI_Gateway/blob/main/docs/API_REFERENCE.md)** - Technical documentation
-- **[Tool Usage Guide](https://github.com/buildswithpaul/Shams_AI_Gateway/blob/main/docs/TOOL_USAGE_GUIDE.md)** - How to use all 21 tools
+- **[Shams AI Gateway](https://github.com/buildswithpaul/Frappe_Assistant_Core)** - Main project repository
+- **[Installation Guide](https://github.com/buildswithpaul/Frappe_Assistant_Core/blob/main/docs/README.md)** - Complete setup instructions
+- **[API Reference](https://github.com/buildswithpaul/Frappe_Assistant_Core/blob/main/docs/API_REFERENCE.md)** - Technical documentation
+- **[Tool Usage Guide](https://github.com/buildswithpaul/Frappe_Assistant_Core/blob/main/docs/TOOL_USAGE_GUIDE.md)** - How to use all 21 tools
 - **[Claude Desktop Extensions](https://www.anthropic.com/engineering/desktop-extensions)** - Official Anthropic documentation
 - **[MCP Protocol](https://modelcontextprotocol.io)** - Model Context Protocol specification
 
@@ -232,6 +232,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-*This Claude Desktop Extension is part of the [Shams AI Gateway](https://github.com/buildswithpaul/Shams_AI_Gateway) project.*
+*This Claude Desktop Extension is part of the [Shams AI Gateway](https://github.com/buildswithpaul/Frappe_Assistant_Core) project.*
 
 *Location: `client_packages/claude-desktop/` - See [Client Packages](../README.md) for other AI platform integrations.*
