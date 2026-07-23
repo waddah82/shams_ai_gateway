@@ -1,0 +1,238 @@
+{
+  "actions": [],
+  "allow_rename": 1,
+  "autoname": "field:module_code",
+  "creation": "2026-07-03 18:00:00.000000",
+  "doctype": "DocType",
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "field_order": [
+    "basic_section",
+    "module_code",
+    "module_name",
+    "provider",
+    "enabled",
+    "connection_section",
+    "api_base_url",
+    "api_key",
+    "organization_id",
+    "project_id",
+    "model_section",
+    "default_chat_model",
+    "default_ocr_model",
+    "temperature",
+    "max_tokens",
+    "request_timeout",
+    "capabilities_section",
+    "supports_tools",
+    "supports_vision",
+    "supports_ocr",
+    "supports_streaming",
+    "advanced_section",
+    "extra_headers_json",
+    "extra_payload_json",
+    "notes"
+  ],
+  "fields": [
+    {
+      "fieldname": "basic_section",
+      "fieldtype": "Section Break",
+      "label": "Basic Configuration"
+    },
+    {
+      "description": "Unique key used by the local chat layer, for example: openai, mistral, gemini.",
+      "fieldname": "module_code",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "Module Code",
+      "reqd": 1,
+      "unique": 1
+    },
+    {
+      "fieldname": "module_name",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "Module Name",
+      "reqd": 1
+    },
+    {
+      "default": "OpenAI",
+      "fieldname": "provider",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Provider",
+      "options": "OpenAI\nMistral\nGemini\nAnthropic\nOpenRouter\nGroq\nOllama\nOpenAI Compatible\nCustom",
+      "reqd": 1
+    },
+    {
+      "default": "1",
+      "fieldname": "enabled",
+      "fieldtype": "Check",
+      "in_list_view": 1,
+      "label": "Enabled"
+    },
+    {
+      "collapsible": 0,
+      "fieldname": "connection_section",
+      "fieldtype": "Section Break",
+      "label": "Connection"
+    },
+    {
+      "description": "Base API URL. Leave blank to use the provider default where supported.",
+      "fieldname": "api_base_url",
+      "fieldtype": "Data",
+      "label": "API Base URL"
+    },
+    {
+      "description": "Stored as Password. Never expose this key in client-side JavaScript.",
+      "fieldname": "api_key",
+      "fieldtype": "Password",
+      "label": "API Key"
+    },
+    {
+      "depends_on": "eval:doc.provider == 'OpenAI'",
+      "fieldname": "organization_id",
+      "fieldtype": "Data",
+      "label": "Organization ID"
+    },
+    {
+      "depends_on": "eval:doc.provider == 'OpenAI'",
+      "fieldname": "project_id",
+      "fieldtype": "Data",
+      "label": "Project ID"
+    },
+    {
+      "collapsible": 0,
+      "fieldname": "model_section",
+      "fieldtype": "Section Break",
+      "label": "Models"
+    },
+    {
+      "description": "Default text/chat model for this provider.",
+      "fieldname": "default_chat_model",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "Default Chat Model"
+    },
+    {
+      "description": "Default OCR/Vision model if the provider supports OCR or vision.",
+      "fieldname": "default_ocr_model",
+      "fieldtype": "Data",
+      "label": "Default OCR Model"
+    },
+    {
+      "default": "0.1",
+      "fieldname": "temperature",
+      "fieldtype": "Float",
+      "label": "Temperature",
+      "precision": "2"
+    },
+    {
+      "default": "4000",
+      "fieldname": "max_tokens",
+      "fieldtype": "Int",
+      "label": "Max Tokens"
+    },
+    {
+      "default": "120",
+      "fieldname": "request_timeout",
+      "fieldtype": "Int",
+      "label": "Request Timeout Seconds"
+    },
+    {
+      "collapsible": 0,
+      "fieldname": "capabilities_section",
+      "fieldtype": "Section Break",
+      "label": "Capabilities"
+    },
+    {
+      "default": "1",
+      "description": "Provider supports function/tool calling. SAG Admin still controls which tools are enabled.",
+      "fieldname": "supports_tools",
+      "fieldtype": "Check",
+      "label": "Supports Tools"
+    },
+    {
+      "default": "0",
+      "fieldname": "supports_vision",
+      "fieldtype": "Check",
+      "label": "Supports Vision"
+    },
+    {
+      "default": "0",
+      "description": "Provider supports OCR/vision extraction. OCR enablement remains controlled by SAG Admin/plugins.",
+      "fieldname": "supports_ocr",
+      "fieldtype": "Check",
+      "label": "Supports OCR"
+    },
+    {
+      "default": "1",
+      "fieldname": "supports_streaming",
+      "fieldtype": "Check",
+      "label": "Supports Streaming"
+    },
+    {
+      "collapsible": 1,
+      "fieldname": "advanced_section",
+      "fieldtype": "Section Break",
+      "label": "Advanced"
+    },
+    {
+      "description": "Optional JSON object for extra HTTP headers, without Authorization.",
+      "fieldname": "extra_headers_json",
+      "fieldtype": "Code",
+      "label": "Extra Headers JSON",
+      "options": "JSON"
+    },
+    {
+      "description": "Optional JSON object merged into provider payloads.",
+      "fieldname": "extra_payload_json",
+      "fieldtype": "Code",
+      "label": "Extra Payload JSON",
+      "options": "JSON"
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Small Text",
+      "label": "Notes"
+    }
+  ],
+  "index_web_pages_for_search": 1,
+  "links": [],
+  "modified": "2026-07-03 18:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "SAG",
+  "name": "Chat Module",
+  "naming_rule": "By fieldname",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "System Manager",
+      "share": 1,
+      "write": 1
+    },
+    {
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "Assistant Admin",
+      "share": 1,
+      "write": 1
+    }
+  ],
+  "quick_entry": 1,
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "states": [],
+  "track_changes": 1
+}
