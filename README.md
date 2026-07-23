@@ -1,5 +1,13 @@
 # Shams AI Gateway
-
+**Development Version Notice**
+>
+> This project is a development and customized version derived from
+> [`frappe_assistant_core`](https://github.com/your-source/frappe_assistant_core).
+>
+> It is being developed under the name **Shams AI Gateway** to extend,
+> customize, and adapt the original project for Shams Solutions use cases.
+>
+> This repository is not the official `frappe_assistant_core` project.
 > Talk to your ERPNext site. SAG lets Claude, ChatGPT, and other
 > MCP-ready LLMs work directly with your invoices, customers, stock,
 > workflows, and custom apps — inside your ERPNext permissions, with
